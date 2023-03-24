@@ -4,7 +4,7 @@ echo -n "Provide your username"
 read username
 
 echo -e "Installing needed packages\n"
-sudo pacman -Sy fzf git make base-devel neovim ruby lua openssh curl zsh cowsay wget flameshot 
+sudo pacman -Sy fzf git make base-devel neovim ruby lua openssh curl zsh cowsay wget flameshot tmux xdg-desktop-portal 
 
 cowsay "Setting up yay"
 cd /home/$username
@@ -38,6 +38,9 @@ cd ~
 
 cp /home/$username/projects/dotfiles/.zshrc /home/$username/.zshrc 
 ln /home/$username/projects/dotfiles/.zshrc /home/$username/.zshrc
+
+cowsay "Setting up tmux"
+ln ~/projects/dotfiles/.tmux.conf ~/.tmux.conf
 
 
 cowsay "Setting up neovim"
