@@ -54,7 +54,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.neovim
 
 nvm install node
-
+source ~/.bashrc
 cd ~/.config/nvim && nvm use node
 
 
