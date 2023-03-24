@@ -1,6 +1,0 @@
-dotfiles/
-fw-tester/
-ils_configurator/
-shell-stuff/
-uwb-config-creator/
-web-fw-tester/

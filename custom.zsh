@@ -28,6 +28,8 @@ alias srb='source ~/.zshrc'
 
 alias als='nvim ~/projects/dotfiles/custom.zsh'
 
+alias tms='tmux ls'
+
 pro() { PS1="($1) ${PS1}" ;}
 
 vopen() {
@@ -68,11 +70,11 @@ mig() {
 
 ######################### VARS ######################
 
-export MAIN_DIR=~/projects
+#export MAIN_DIR=~/projects
 
-export GIT_USER=fr-EDD1E
+# export GIT_USER=fr-EDD1E
 
-cd $MAIN_DIR && ls -d */ > $MAIN_DIR/dotfiles/git-repos.txt && cd ~
+#cd $MAIN_DIR && ls -d */ > $MAIN_DIR/dotfiles/git-repos.txt && cd ~
 
 
 ######################### GIT STUFF ######################
@@ -162,6 +164,12 @@ msi() {
 pco() {
 
 	picocom /dev/tty$1 --b 115200
+
+}
+
+tma() {
+
+    tmux a $1
 
 }
 
