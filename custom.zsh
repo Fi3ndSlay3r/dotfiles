@@ -70,7 +70,7 @@ mig() {
 
 ######################### VARS ######################
 
-#export MAIN_DIR=~/projects
+export MAIN_DIR=~/projects
 
 # export GIT_USER=fr-EDD1E
 
