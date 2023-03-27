@@ -1,4 +1,4 @@
-URxvt*font: xft:MesloLGS\ NF:autohint=true:size=12
+URxvt*font: xft:MesloLGS\ NF:size=11
 !URxvt*font: xft:Hack Nerd Font:pixelsize=12,xft:UbuntuMono Nerd Font:pixelsize=12
 URxvt*scrollBar:        false
 
