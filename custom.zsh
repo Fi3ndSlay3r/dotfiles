@@ -33,33 +33,33 @@ alias tms='tmux ls'
 pro() { PS1="($1) ${PS1}" ;}
 
 vopen() {
-echo -e "Decrypting the archive...\n"
-gpg "$1"
-tarName="${1//\.gpg/}"
-echo -e "Archive name: $tarName"
-echo -e "Unpacking the archive...\n"
-tar xzf "$tarName"
-dirName="${tarName//\.tar\.gz/}"
-echo "Directory name: $dirname"
-echo -e "Deleting decrypted archive...\n"
-rm -rf "$tarName"
-echo -e "Done!\n"
-ls
+    echo -e "Decrypting the archive...\n"
+    gpg "$1"
+    tarName="${1//\.gpg/}"
+    echo -e "Archive name: $tarName"
+    echo -e "Unpacking the archive...\n"
+    tar xzf "$tarName"
+    dirName="${tarName//\.tar\.gz/}"
+    echo "Directory name: $dirname"
+    echo -e "Deleting decrypted archive...\n"
+    rm -rf "$tarName"
+    echo -e "Done!\n"
+    ls
 }
 
 vclose() {
-echo -e "Deleting old encrypted archive...\n"
-rm -rf "$1.tar.gz.gpg"
-echo -e "Creating new unencrypted archive...\n"
-tar -czf "$1.tar.gz" "$1"
-echo -e "Deleting unencrypted directory...\n"
-rm -rf "$1"
-echo -e "Encrypting new archive...\n"
-gpg -c "$1.tar.gz"
-echo -e "Deleting unencrypted archive...\n"
-rm -rf "$1.tar.gz"
-echo -e "Done:\n"
-ls
+    echo -e "Deleting old encrypted archive...\n"
+    rm -rf "$1.tar.gz.gpg"
+    echo -e "Creating new unencrypted archive...\n"
+    tar -czf "$1.tar.gz" "$1"
+    echo -e "Deleting unencrypted directory...\n"
+    rm -rf "$1"
+    echo -e "Encrypting new archive...\n"
+    gpg -c "$1.tar.gz"
+    echo -e "Deleting unencrypted archive...\n"
+    rm -rf "$1.tar.gz"
+    echo -e "Done:\n"
+    ls
 }
 
 mig() {
@@ -158,7 +158,7 @@ msi() {
 
 pco() {
 
-	picocom /dev/tty$1 --b 115200
+    picocom /dev/tty$1 --b 115200
 
 }
 
@@ -166,6 +166,10 @@ tma() {
 
     tmux a $1
 
+}
+
+bmq() {
+    ~/Downloads//ble_v2_dev_monitor-linux --mqtt-host ils-warsaw.ubudu.com --mqtt-port 1883 --mqtt-topic "$1"
 }
 
 flash() { nrfjprog --recover && nrfjprog --program "$1" --sectorerase && nrfjprog -r ;}
