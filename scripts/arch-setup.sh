@@ -6,29 +6,25 @@ read username
 echo -e "Installing needed packages\n"
 sudo pacman -Sy fzf git make base-devel neovim lua openssh curl zsh cowsay wget flameshot tmux xdg-desktop-portal 
 
-# cowsay "Setting up yay"
+cowsay "Setting up yay"
+sleep 1
 cd /home/$username
-# git clone https://aur.archlinux.org/yay.git
-# cd yay
-# makepkg -si
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
 
-# yay -Syu spotify visual-studio-code-bin chromium
+yay -Syu spotify visual-studio-code-bin chromium
 
 
-# cowsay "Cloning dotfiles repo"
-# mkdir projects
-# git clone git@github.com:fr-EDD1E/dotfiles.git ~/projects/dotfiles/
+cowsay "Cloning dotfiles repo"
+mkdir projects
+git clone git@github.com:fr-EDD1E/dotfiles.git ~/projects/dotfiles/
 
 cowsay "Setting up zsh"
-
-# zsh
+sleep 1
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-
-cd ~/Downloads/
-wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Medium/complete/Fira%20Code%20Medium%20Nerd%20Font%20Complete.ttf
-sudo mv 'Fira Code Medium Nerd Font Complete.ttf' /usr/share/fonts/TTF/
 
 sudo pacman -S ruby
 
