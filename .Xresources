@@ -16,41 +16,27 @@ URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
 
 
-*.foreground:   #eaeaea
-*.background:   #2c323b
-*.cursorColor:  #3d3d3d
-
-! black
-*.color0:       #242a32
-*.color8:       #666666
-
-! red
-*.color1:       #d54e53
-*.color9:       #ec3e45
-
-! green
-*.color2:       #98c379
-*.color10:      #90c966
-
-! yellow
-*.color3:       #e5c07b
-*.color11:      #edbf69
-
-! blue
-*.color4:       #83a598
-*.color12:      #73ba9f
-
-! magenta
-*.color5:       #c678dd
-*.color13:      #c858e9
-
-! cyan
-*.color6:       #70c0ba
-*.color14:      #2bcec2
-
-! white
-*.color7:       #eaeaea
-*.color15:      #ffffff
+! Nightfox colors for Xresources
+! Style: carbonfox
+! Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/nightfox_xresources.Xresources
+*background: #161616
+*foreground: #f2f4f8
+*color0:  #282828
+*color1:  #ee5396
+*color2:  #25be6a
+*color3:  #08bdba
+*color4:  #78a9ff
+*color5:  #be95ff
+*color6:  #33b1ff
+*color7:  #dfdfe0
+*color8:  #484848
+*color9:  #f16da6
+*color10: #46c880
+*color11: #2dc7c4
+*color12: #8cb6ff
+*color13: #c8a5ff
+*color14: #52bdff
+*color15: #e4e4e5
 
 
 ! Restore Ctrl+Shift+(c|v)
