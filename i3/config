@@ -34,7 +34,7 @@ set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 bindsym $mod+Ctrl+l exec --no-startup-id $i3lockwall
 
 # wallpaper
-exec --no-startup-id feh --no-fehbg --bg-fill '/home/ap/Pictures/met.jpg'
+exec --no-startup-id feh --no-fehbg --bg-fill './met.jpg'
 
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
