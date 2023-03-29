@@ -156,6 +156,14 @@ msi() {
     mosquitto_sub -h ils-warsaw.ubudu.com -t "$1" -v
 }
 
+msread() {
+    mosquitto_sub -h ils-warsaw.ubudu.com -t gw/"$1"/dev/"$2"/serial/read -v
+}
+
+mswrite() {
+    mosquitto_sub -h ils-warsaw.ubudu.com -t gw/"$1"/dev/"$2"/serial/write -v
+}
+
 pco() {
 
     picocom /dev/tty$1 --b 115200
