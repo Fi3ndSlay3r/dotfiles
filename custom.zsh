@@ -79,7 +79,7 @@ export MAIN_DIR=~/projects
 
 ######################### GIT STUFF ######################
 
-gs() {
+gsa() {
     cd ~/projects/
     prev=$(pwd)
     repos=($(ls -d */))
@@ -95,7 +95,7 @@ gs() {
     cd $prev
 }
 
-gt() {
+gpa() {
     cd ~/projects/
     prev=$(pwd)
     repos=($(ls -d */))
@@ -111,19 +111,21 @@ gt() {
     cd $prev
 }
 
-alias push='git push'
+alias gp='git push'
+alias gt='git pull'
+alias ga='git add .'
 
-commit() { git commit -am "$1" ;} 
+gc() { git commit -am "$1" ;} 
 
 acp() { git add . ; git commit -am "$1"; git push ;}
 
-alias ace='git commit -a --amend  --no-edit'
+alias gca='git commit -a --amend  --no-edit'
 
-alias lo='git log --oneline --graph --decorate'
+alias gl='git log --oneline --graph --decorate'
 
-alias st='git status -b -s'
+alias gt='git status -b -s'
 
-alias lv='git log --graph --decorate'
+alias glv='git log --graph --decorate'
 
 
 ######################### C STUFF ######################

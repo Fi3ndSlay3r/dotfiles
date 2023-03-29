@@ -2,7 +2,7 @@
 
 cowsay "Installing needed packages..."
 sleep 1
-sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl
+sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl redshift
 
 cowsay "Installing needed fonts..."
 sleep 1
@@ -12,6 +12,12 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip
 mkdir ~/.local/share/fonts
 unzip Hack.zip -d HackTTF && mv HackTTF ~/.local/share/fonts/
 
+cowsay "Setting up redshift"
+sleep 1
+mkdir -p ~/.config/systemd/user/
+cp ~/projects/dotfiles/geoclue-agent.service ~/.config/systemd/user/
+systemctl --user enable geoclue-agent.service
+systemctl --user start geoclue-agent.service
 
 cowsay "Copying i3 directory to ~/.config..."
 sleep 1
