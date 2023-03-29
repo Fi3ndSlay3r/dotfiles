@@ -113,13 +113,13 @@ gpa() {
 
 alias gp='git push'
 alias gt='git pull'
-alias ga='git add .'
+alias ga='git add -A'
 
-gc() { git commit -am "$1" ;} 
+#gc() { git commit -am "$1" ;} 
 
 acp() { git add . ; git commit -am "$1"; git push ;}
 
-alias gca='git commit -a --amend  --no-edit'
+alias gne='git commit -a --amend  --no-edit'
 
 alias gl='git log --oneline --graph --decorate'
 
