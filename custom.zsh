@@ -123,7 +123,7 @@ alias gne='git commit -a --amend  --no-edit'
 
 alias gl='git log --oneline --graph --decorate'
 
-alias gt='git status -b -s'
+alias gs='git status -b -s'
 
 alias glv='git log --graph --decorate'
 
