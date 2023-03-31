@@ -2,7 +2,7 @@
 
 cowsay "Installing needed packages..."
 sleep 1
-sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl redshift
+sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl redshift alsa-utils
 
 cowsay "Installing needed fonts..."
 sleep 1
