@@ -38,6 +38,9 @@ bindsym $mod+Ctrl+l exec --no-startup-id $i3lockwall
 
 set $i3screens sh $HOME/projects/dotfiles/i3/screens.sh &
 bindsym $mod+Ctrl+p exec --no-startup-id $i3screens
+
+set $i3mic sh $HOME/projects/dotfiles/i3/mic.sh &
+bindsym $mod+Ctrl+m exec --no-startup-id $i3mic
 # wallpaper
 exec --no-startup-id feh --no-fehbg --bg-fill $HOME/projects/dotfiles/i3/met.jpg
 
