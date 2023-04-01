@@ -62,5 +62,8 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.urlLauncher: firefox
 URxvt.underlineURLs: true
-URxvt.urlButton: 2 
+URxvt.urlButton: 2
 URxvt.url-select.autocopy:true
+
+!! THAT DAMN BELL
+URxvt*bellStyle: none

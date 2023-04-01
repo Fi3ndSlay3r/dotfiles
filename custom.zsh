@@ -1,10 +1,10 @@
 ######################### Directory jumping #########################
 
-alias govim="cd ~/.config/nvim/"
+alias govim="cd $HOME/.config/nvim/"
 
-alias d="cd ~ && cd \$(find ./ -type d | fzf )"
+alias d="cd $HOME && cd \$(find ./ -type d | fzf )"
 
-alias f="cd ~ && nvim \$(find ./ -type f | fzf )"
+alias f="cd $HOME && nvim \$(find ./ -type f | fzf )"
 
 alias sd="cd \$(find ./ -type d | fzf )"
 
@@ -22,11 +22,11 @@ alias lc='colorls -A --sd --gs'
 
 alias nv="nvim ."
 
-alias helpme="cat ~/projects/dotfiles/custom.zsh | sed 's/alias//'| sed 's/=/ ---> /' | sed 's/) /) ---> /' | sed 's/[\"'\'']//g' "
+alias helpme="cat $HOME/projects/dotfiles/custom.zsh | sed 's/alias//'| sed 's/=/ ---> /' | sed 's/) /) ---> /' | sed 's/[\"'\'']//g' "
 
-alias srb='source ~/.zshrc'
+alias srb='source $HOME/.zshrc'
 
-alias als='nvim ~/projects/dotfiles/custom.zsh'
+alias als='nvim $HOME/projects/dotfiles/custom.zsh'
 
 alias tms='tmux ls'
 
@@ -70,22 +70,24 @@ mig() {
 
 ######################### VARS ######################
 
-export MAIN_DIR=~/projects
-
+export MAIN_DIR="$HOME/projects"
+export dotfiles="$HOME/projects/dotfiles"
+export i3Config="$HOME/projects/dotfiles/i3/config"
+export i3StatusConfig="$HOME/projects/dotfiles/i3/i3status.conf"
 # export GIT_USER=fr-EDD1E
 
-#cd $MAIN_DIR && ls -d */ > $MAIN_DIR/dotfiles/git-repos.txt && cd ~
+#cd $MAIN_DIR && ls -d */ > $MAIN_DIR/dotfiles/git-repos.txt && cd $HOME
 
 
 ######################### GIT STUFF ######################
 
 gsa() {
-    cd ~/projects/
+    cd $HOME/projects/
     prev=$(pwd)
     repos=($(ls -d */))
     for i in ${repos[@]}
     do
-        cd $MAIN_DIR/"$i" 
+        cd $MAIN_DIR/"$i"
         echo -e "-------------> ${i}		"
         git status -b -s
         echo -e "<-------------"
@@ -96,12 +98,12 @@ gsa() {
 }
 
 gpa() {
-    cd ~/projects/
+    cd $HOME/projects/
     prev=$(pwd)
     repos=($(ls -d */))
     for i in ${repos[@]}
     do
-        cd $MAIN_DIR/"$i" 
+        cd $MAIN_DIR/"$i"
         echo -e "-------------> ${i}		"
         git pull
         echo -e "<-------------"
@@ -115,7 +117,7 @@ alias gp='git push'
 alias gt='git pull'
 alias ga='git add -A'
 
-#gc() { git commit -am "$1" ;} 
+#gc() { git commit -am "$1" ;}
 
 acp() { git add . ; git commit -am "$1"; git push ;}
 
@@ -178,8 +180,12 @@ tma() {
 
 }
 
+cpx() {
+    cat "$1" | xclip -selection clipboard
+}
+
 bmq() {
-    ~/Downloads//ble_v2_dev_monitor-linux --mqtt-host ils-warsaw.ubudu.com --mqtt-port 1883 --mqtt-topic "$1"
+    $HOME/Downloads//ble_v2_dev_monitor-linux --mqtt-host ils-warsaw.ubudu.com --mqtt-port 1883 --mqtt-topic "$1"
 }
 
 flash() { nrfjprog --recover && nrfjprog --program "$1" --sectorerase && nrfjprog -r ;}

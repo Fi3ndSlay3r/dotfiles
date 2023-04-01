@@ -4,7 +4,7 @@ echo -n "Provide your username"
 read username
 
 echo -e "Installing needed packages\n"
-sudo pacman -Sy fzf git make base-devel neovim lua openssh curl zsh cowsay wget flameshot tmux xdg-desktop-portal 
+sudo pacman -Sy fzf git make base-devel neovim lua openssh curl zsh cowsay wget flameshot tmux xdg-desktop-portal alsa-utils picom
 
 cowsay "Setting up yay"
 sleep 1
@@ -34,7 +34,7 @@ gem install colorls
 
 cd ~
 
-cp /home/$username/projects/dotfiles/.zshrc /home/$username/.zshrc 
+cp /home/$username/projects/dotfiles/.zshrc /home/$username/.zshrc
 ln /home/$username/projects/dotfiles/.zshrc /home/$username/.zshrc
 
 cowsay "Setting up tmux"
