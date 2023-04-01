@@ -36,6 +36,8 @@ set $status_cmd i3status -c $HOME/projects/dotfiles/i3/i3status.conf
 set $i3lockwall sh $HOME/projects/dotfiles/i3/lock.sh &
 bindsym $mod+Ctrl+l exec --no-startup-id $i3lockwall
 
+set $i3screens sh $HOME/projects/dotfiles/i3/screens.sh &
+bindsym $mod+Ctrl+p exec --no-startup-id $i3screens
 # wallpaper
 exec --no-startup-id feh --no-fehbg --bg-fill $HOME/projects/dotfiles/i3/met.jpg
 
