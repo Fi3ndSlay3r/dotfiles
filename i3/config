@@ -42,7 +42,7 @@ bindsym $mod+Ctrl+p exec --no-startup-id $i3screens
 set $i3mic sh $HOME/projects/dotfiles/i3/mic.sh &
 bindsym $mod+Ctrl+m exec --no-startup-id $i3mic
 # wallpaper
-exec --no-startup-id feh --no-fehbg --bg-fill $HOME/projects/dotfiles/i3/met.jpg
+exec --no-startup-id $HOME/projects/dotfiles/i3/restoreWlp.sh
 
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 

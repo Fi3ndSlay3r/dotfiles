@@ -36,3 +36,4 @@ case $selected_option in
   *) echo "Invalid option.";;
 esac
 
+$HOME/projects/dotfiles/i3/restoreWlp.sh
