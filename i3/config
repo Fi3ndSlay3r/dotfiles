@@ -23,6 +23,7 @@ font pango:MesloLGS NF: 9
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id picom --config $HOME/projects/dotfiles/i3/picom.conf
+exec --no-startup-id xinput set-prop 11 303 1
 
 set $status_cmd i3status -c $HOME/projects/dotfiles/i3/i3status.conf
 
