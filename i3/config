@@ -24,6 +24,9 @@ font pango:MesloLGS NF: 9
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id picom --config $HOME/projects/dotfiles/i3/picom.conf
 exec --no-startup-id xinput set-prop 11 303 1
+exec_always --no-startup-id dunst -config $HOME/projects/dotfiles/i3/dunstrc
+exec --no-startup-id setxkbmap pl
+exec --no-startup-id sh $HOME/projects/dotfiles/i3/shs/trays.sh &
 
 set $status_cmd i3status -c $HOME/projects/dotfiles/i3/i3status.conf
 
@@ -34,13 +37,13 @@ set $status_cmd i3status -c $HOME/projects/dotfiles/i3/i3status.conf
 # screen before suspend. Use loginctl lock-session to lock your screen.
 
 # i3lock settings
-set $i3lockwall sh $HOME/projects/dotfiles/i3/lock.sh &
+set $i3lockwall sh $HOME/projects/dotfiles/i3/shs/lock.sh &
 bindsym $mod+Ctrl+l exec --no-startup-id $i3lockwall
 
-set $i3screens sh $HOME/projects/dotfiles/i3/screens.sh &
+set $i3screens sh $HOME/projects/dotfiles/i3/shs/screens.sh &
 bindsym $mod+Ctrl+p exec --no-startup-id $i3screens
 
-set $i3mic sh $HOME/projects/dotfiles/i3/mic.sh &
+set $i3mic sh $HOME/projects/dotfiles/i3/shs/mic.sh &
 bindsym $mod+Ctrl+m exec --no-startup-id $i3mic
 # wallpaper
 exec --no-startup-id $HOME/projects/dotfiles/i3/restoreWlp.sh
@@ -49,7 +52,6 @@ exec --no-startup-id $HOME/projects/dotfiles/i3/restoreWlp.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
 exec --no-startup-id redshift -l geoclue2
 
 # Use pactl to adjust volume in PulseAudio.
@@ -259,6 +261,6 @@ bindsym $mod+BackSpace mode "$mode_system"
 
 bar {
         font pango:Hack Nerd Font, Font Awesome 6 Free, Font Awesome 6 Brands, Font Awesome v4 Compatibility:style=Regular:antialias=true: 10
-        tray_output primary
+        tray_output VGA-1 
         status_command $status_cmd
 }

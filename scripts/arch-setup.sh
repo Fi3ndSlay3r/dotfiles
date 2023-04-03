@@ -4,7 +4,7 @@ echo -n "Provide your username"
 read username
 
 echo -e "Installing needed packages\n"
-sudo pacman -Sy fzf git make base-devel neovim lua openssh curl zsh cowsay wget flameshot tmux xdg-desktop-portal alsa-utils picom
+sudo pacman -Sy fzf git make base-devel neovim lua openssh curl zsh cowsay wget flameshot tmux alsa-utils
 
 cowsay "Setting up yay"
 sleep 1

@@ -2,7 +2,7 @@
 
 cowsay "Installing needed packages..."
 sleep 1
-sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl redshift alsa-utils picom xclip
+sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl redshift alsa-utils picom xclip alsa-utils dunst blueman
 
 cowsay "Installing needed fonts..."
 sleep 1
@@ -27,10 +27,12 @@ cowsay "Creating proper symlinks for urxvt, tmux, i3 and zsh"
 sleep 1
 
 mkdir  $HOME/.config/i3/
+mkdir  $HOME/.config/dunst/
 ln -s $HOME/projects/dotfiles/i3/config $HOME/.config/i3/
 ln -s $HOME/projects/dotfiles/.Xresources $HOME/
 ln -s $HOME/projects/dotfiles/.zshrc $HOME/
 ln -s $HOME/projects/dotfiles/.tmux.conf $HOME/
+ln -s $HOME/projects/dotfiles/i3/dunstrc $HOME/.config/dunst/
 
 cowsay "Done :D"
 
