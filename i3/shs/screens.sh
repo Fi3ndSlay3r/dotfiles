@@ -6,6 +6,9 @@ displays=$(xrandr -q | grep ' connected' | awk '{print $1}')
 # Prompt the user to select the primary display using dmenu
 primary=$(echo $displays | tr ' ' '\n' | dmenu -i -p "Select the primary display:")
 
+# Set the selected display as the primary display
+xrandr --output $primary --primary
+
 # Remove the primary display from the list of displays
 other_displays=""
 for display in $displays; do
@@ -36,4 +39,3 @@ case $selected_option in
   *) echo "Invalid option.";;
 esac
 
-$HOME/projects/dotfiles/i3/restoreWlp.sh
