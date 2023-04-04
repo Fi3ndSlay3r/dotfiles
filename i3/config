@@ -22,11 +22,11 @@ font pango:MesloLGS NF: 9
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id picom --config $HOME/projects/dotfiles/i3/picom.conf
 exec --no-startup-id xinput set-prop 11 303 1
-exec_always --no-startup-id dunst -config $HOME/projects/dotfiles/i3/dunstrc
+exec --no-startup-id dunst -config $HOME/projects/dotfiles/i3/dunstrc
 exec --no-startup-id setxkbmap pl
 exec --no-startup-id sh $HOME/projects/dotfiles/i3/shs/trays.sh &
+exec --no-startup-id picom --config $HOME/projects/dotfiles/i3/picom.conf
 
 set $status_cmd i3status -c $HOME/projects/dotfiles/i3/i3status.conf
 
@@ -46,7 +46,7 @@ bindsym $mod+Ctrl+p exec --no-startup-id $i3screens
 set $i3mic sh $HOME/projects/dotfiles/i3/shs/mic.sh &
 bindsym $mod+Ctrl+m exec --no-startup-id $i3mic
 # wallpaper
-exec --no-startup-id $HOME/projects/dotfiles/i3/restoreWlp.sh
+exec --no-startup-id $HOME/projects/dotfiles/i3/shs/restoreWlp.sh
 
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
