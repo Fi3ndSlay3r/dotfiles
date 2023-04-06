@@ -123,12 +123,13 @@ acp() { git add . ; git commit -am "$1"; git push ;}
 
 alias gne='git commit -a --amend  --no-edit'
 
-alias gl='git log --oneline --graph --decorate'
+alias glo='git log --oneline --graph --decorate'
 
 alias gs='git status -b -s'
 
-alias glv='git log --graph --decorate'
+alias glv='git log --graph --decorate --all --oneline'
 
+alias gla='git log --all --graph --decorate --stat"
 
 ######################### C STUFF ######################
 
