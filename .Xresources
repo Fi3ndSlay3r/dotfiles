@@ -67,3 +67,8 @@ URxvt.url-select.autocopy:true
 
 !! THAT DAMN BELL
 URxvt*bellStyle: none
+URxvt.urgentOnBell: false
+! Disable terminal bell
+URxvt.visualBell: false
+URxvt.audibleBell: false
+
