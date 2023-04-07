@@ -2,7 +2,7 @@
 
 cowsay "Installing needed packages..."
 sleep 1
-sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl redshift alsa-utils picom xclip alsa-utils dunst blueman
+sudo pacman -S i3 dmenu feh imagemagick scrot xorg-xrandr playerctl redshift alsa-utils picom xclip alsa-utils dunst blueman ranger mpv ffmpegthumbnailer ffmpeg w3m
 
 cowsay "Installing needed fonts..."
 sleep 1
@@ -29,6 +29,7 @@ sleep 1
 mkdir  $HOME/.config/i3/
 mkdir  $HOME/.config/dunst/
 ln -s $HOME/projects/dotfiles/i3/config $HOME/.config/i3/
+ln -s $HOME/projects/dotfiles/ranger $HOME/.config/
 ln -s $HOME/projects/dotfiles/.Xresources $HOME/
 ln -s $HOME/projects/dotfiles/.zshrc $HOME/
 ln -s $HOME/projects/dotfiles/.tmux.conf $HOME/

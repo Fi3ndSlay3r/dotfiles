@@ -22,6 +22,8 @@ alias lc='colorls -A --sd --gs'
 
 alias nv="nvim ."
 
+alias rn="ranger ."
+
 alias helpme="cat $HOME/projects/dotfiles/custom.zsh | sed 's/alias//'| sed 's/=/ ---> /' | sed 's/) /) ---> /' | sed 's/[\"'\'']//g' "
 
 alias srb='source $HOME/.zshrc'
@@ -74,6 +76,7 @@ export MAIN_DIR="$HOME/projects"
 export dotfiles="$HOME/projects/dotfiles"
 export i3Config="$HOME/projects/dotfiles/i3/config"
 export i3StatusConfig="$HOME/projects/dotfiles/i3/i3status.conf"
+export EDITOR=nvim
 # export GIT_USER=fr-EDD1E
 
 #cd $MAIN_DIR && ls -d */ > $MAIN_DIR/dotfiles/git-repos.txt && cd $HOME
@@ -129,7 +132,7 @@ alias gs='git status -b -s'
 
 alias glv='git log --graph --decorate --all --oneline'
 
-alias gla='git log --all --graph --decorate --stat"
+alias gla='git log --all --graph --decorate --stat'
 
 ######################### C STUFF ######################
 
