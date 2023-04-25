@@ -1,3 +1,3 @@
 #!/bin/sh
 
-feh --no-fehbg --bg-fill $HOME/projects/dotfiles/i3/met.jpg
+feh --no-fehbg --bg-fill $HOME/projects/dotfiles/i3/mw.jpg
