@@ -95,6 +95,7 @@ floating_modifier $mod
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
+default_border pixel
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -261,6 +262,6 @@ bindsym $mod+BackSpace mode "$mode_system"
 
 bar {
         font pango:Hack Nerd Font, Font Awesome 6 Free, Font Awesome 6 Brands, Font Awesome v4 Compatibility:style=Regular:antialias=true: 10
-        tray_output VGA-1 
+        tray_output VGA-1
         status_command $status_cmd
 }
