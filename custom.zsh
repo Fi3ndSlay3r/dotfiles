@@ -194,6 +194,8 @@ bmq() {
 
 flash() { nrfjprog --recover && nrfjprog --program "$1" --sectorerase && nrfjprog -r ;}
 
+keychain --quiet ~/.ssh/gw-key-1
+source ~/.keychain/$HOST-sh
 # export -f gs
 # export -f cb
 # export -f cr
