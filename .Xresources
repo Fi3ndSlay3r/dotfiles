@@ -72,3 +72,5 @@ URxvt.urgentOnBell: false
 URxvt.visualBell: false
 URxvt.audibleBell: false
 
+URxvt*scrollTtyOutput: false
+
