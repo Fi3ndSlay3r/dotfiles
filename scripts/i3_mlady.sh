@@ -15,7 +15,7 @@ unzip Hack.zip -d HackTTF && mv HackTTF ~/.local/share/fonts/
 cowsay "Setting up redshift"
 sleep 1
 mkdir -p ~/.config/systemd/user/
-cp ~/dev/dotfiles/geoclue-agent.service ~/.config/systemd/user/
+cp ~/dev/dotfiles/i3/geoclue-agent.service ~/.config/systemd/user/
 systemctl --user daemon-reload
 systemctl --user enable geoclue-agent.service
 systemctl --user start geoclue-agent.service

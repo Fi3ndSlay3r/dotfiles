@@ -81,7 +81,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=( git zsh-syntax-highlighting zsh-autosuggestions )
 
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/projects/dotfiles/custom.zsh
+source ~/dev/dotfiles/custom.zsh
 export PATH=/home/ap/.local/share/gem/ruby/3.0.0/bin:$PATH
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

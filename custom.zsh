@@ -24,11 +24,11 @@ alias nv="nvim ."
 
 alias rn="ranger ."
 
-alias helpme="cat $HOME/projects/dotfiles/custom.zsh | sed 's/alias//'| sed 's/=/ ---> /' | sed 's/) /) ---> /' | sed 's/[\"'\'']//g' "
+alias helpme="cat $HOME/dev/dotfiles/custom.zsh | sed 's/alias//'| sed 's/=/ ---> /' | sed 's/) /) ---> /' | sed 's/[\"'\'']//g' "
 
 alias srb='source $HOME/.zshrc'
 
-alias als='nvim $HOME/projects/dotfiles/custom.zsh'
+alias als='nvim $HOME/dev/dotfiles/custom.zsh'
 
 alias tms='tmux ls'
 
@@ -72,10 +72,10 @@ mig() {
 
 ######################### VARS ######################
 
-export MAIN_DIR="$HOME/projects"
-export dotfiles="$HOME/projects/dotfiles"
-export i3Config="$HOME/projects/dotfiles/i3/config"
-export i3StatusConfig="$HOME/projects/dotfiles/i3/i3status.conf"
+export MAIN_DIR="$HOME/dev"
+export dotfiles="$HOME/dev/dotfiles"
+export i3Config="$HOME/dev/dotfiles/i3/config"
+export i3StatusConfig="$HOME/dev/dotfiles/i3/i3status.conf"
 export EDITOR=nvim
 # export GIT_USER=fr-EDD1E
 
@@ -85,7 +85,7 @@ export EDITOR=nvim
 ######################### GIT STUFF ######################
 
 gsa() {
-    cd $HOME/projects/
+    cd $HOME/dev/
     prev=$(pwd)
     repos=($(ls -d */))
     for i in ${repos[@]}
@@ -101,7 +101,7 @@ gsa() {
 }
 
 gpa() {
-    cd $HOME/projects/
+    cd $HOME/dev/
     prev=$(pwd)
     repos=($(ls -d */))
     for i in ${repos[@]}
@@ -201,8 +201,8 @@ bmq() {
 
 flash() { nrfjprog --recover && nrfjprog --program "$1" --sectorerase && nrfjprog -r ;}
 
-keychain --quiet ~/.ssh/gw-key-1
-source ~/.keychain/$HOST-sh
+#keychain --quiet ~/.ssh/gw-key-1
+#source ~/.keychain/$HOST-sh
 # export -f gs
 # export -f cb
 # export -f cr
