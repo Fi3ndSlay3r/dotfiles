@@ -172,6 +172,13 @@ mswrite() {
     mosquitto_sub -h ils-warsaw.ubudu.com -t gw/"$1"/dev/"$2"/serial/write -v
 }
 
+
+bcd() {
+
+bcrc -b ils-warsaw.ubudu.com -s ucs -m "$1\r\n" -t $2 -g $3
+
+}
+
 pco() {
 
     picocom /dev/tty$1 --b 115200
@@ -189,7 +196,7 @@ cpx() {
 }
 
 bmq() {
-    $HOME/Downloads//ble_v2_dev_monitor-linux --mqtt-host ils-warsaw.ubudu.com --mqtt-port 1883 --mqtt-topic "$1"
+    $HOME/Downloads/ble_v2_dev_monitor-linux --mqtt-host ils-warsaw.ubudu.com --mqtt-port 1883 --mqtt-topic "$1"
 }
 
 flash() { nrfjprog --recover && nrfjprog --program "$1" --sectorerase && nrfjprog -r ;}
