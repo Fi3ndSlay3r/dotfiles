@@ -3,6 +3,8 @@
 echo -n "Provide your username\n"
 read username
 
+echo -n "Provide your working directory name"
+read work_dir
 
 echo -n "Provide your github username\n"
 read git_user
@@ -21,7 +23,7 @@ sudo dnf install -y\
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 echo -e "Installing needed packages\n"
-sudo dnf install -y fzf git make base-devel neovim lua openssh curl zsh cowsay\
+sudo dnf install -y fzf git make base-$work_direl neovim lua openssh curl zsh cowsay\
     wget flameshot tmux alsa-utils gnome-tweaks
 
 sudo dnf group install -y "C Development Tools and Libraries" "Development Tools"
@@ -36,8 +38,8 @@ sudo dnf groupupdate sound-and-video
 flatpak install spotify com.mattjakeman.ExtensionManager
 
 cowsay "Cloning dotfiles repo"
-mkdir dev
-git clone git@github.com:$git_user/dotfiles.git ~/dev/dotfiles/
+mkdir $work_dir
+git clone git@github.com:$git_user/dotfiles.git ~/$work_dir/dotfiles/
 
 cowsay "Setting up zsh"
 sleep 1
@@ -53,11 +55,11 @@ gem install colorls
 
 cd ~
 
-cp /home/$username/dev/dotfiles/.zshrc /home/$username/.zshrc
-ln /home/$username/dev/dotfiles/.zshrc /home/$username/.zshrc
+cp /home/$username/$work_dir/dotfiles/.zshrc /home/$username/.zshrc
+ln /home/$username/$work_dir/dotfiles/.zshrc /home/$username/.zshrc
 
 cowsay "Setting up tmux"
-ln ~/dev/dotfiles/.tmux.conf ~/.tmux.conf
+ln ~/$work_dir/dotfiles/.tmux.conf ~/.tmux.conf
 
 
 cowsay "Setting up neovim"

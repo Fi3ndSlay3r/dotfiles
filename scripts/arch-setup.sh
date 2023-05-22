@@ -3,6 +3,12 @@
 echo -n "Provide your username"
 read username
 
+echo -n "Provide your git username"
+read git_user
+
+echo -n "Provide your working directory name"
+read work_dir
+
 echo -e "Installing needed packages\n"
 sudo pacman -Sy fzf git make base-devel neovim lua openssh curl zsh cowsay wget flameshot tmux alsa-utils
 
@@ -17,8 +23,8 @@ yay -Syu spotify visual-studio-code-bin chromium
 
 
 cowsay "Cloning dotfiles repo"
-mkdir projects
-git clone git@github.com:fr-EDD1E/dotfiles.git ~/projects/dotfiles/
+mkdir $work_dir
+git clone git@github.com:$git_user/dotfiles.git ~/$work_dir/dotfiles/
 
 cowsay "Setting up zsh"
 sleep 1
@@ -34,17 +40,17 @@ gem install colorls
 
 cd ~
 
-cp /home/$username/projects/dotfiles/.zshrc /home/$username/.zshrc
-ln /home/$username/projects/dotfiles/.zshrc /home/$username/.zshrc
+cp /home/$username/$work_dir/dotfiles/.zshrc /home/$username/.zshrc
+ln /home/$username/$work_dir/dotfiles/.zshrc /home/$username/.zshrc
 
 cowsay "Setting up tmux"
-ln ~/projects/dotfiles/.tmux.conf ~/.tmux.conf
+ln ~/$work_dir/dotfiles/.tmux.conf ~/.tmux.conf
 
 
 cowsay "Setting up neovim"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-git clone git@github.com:fr-EDD1E/nvim.git /home/$username/.config/nvim
+git clone git@github.com:$git_user/nvim.git /home/$username/.config/nvim
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.neovim
